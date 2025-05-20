@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
 
-## Project info
+# Product Page Implementation
 
-**URL**: https://lovable.dev/projects/b66f1ea5-c0b2-4c72-ba58-ea8fd42ba778
+## Overview
 
-## How can I edit this code?
+This project implements a responsive e-commerce product page with features commonly found in Shopify themes. The page is built using vanilla HTML, CSS, and JavaScript without any external libraries.
 
-There are several ways of editing your application.
+## Features Implemented
 
-**Use Lovable**
+1. **Scrollable Product Images Gallery**
+   - Main image with thumbnails on the side
+   - Clicking a thumbnail updates the main image
+   - Scrollable thumbnails navigation
+   - Image zoom on hover/click
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b66f1ea5-c0b2-4c72-ba58-ea8fd42ba778) and start prompting.
+2. **Size Chart Button with Modal**
+   - Modal popup showing a sample size chart table
+   - Dismissible via close button, ESC key, and overlay click
 
-Changes made via Lovable will be committed automatically to this repo.
+3. **Product Variants**
+   - Color variations displayed as swatches
+   - Size variations shown as buttons
+   - Selection visually updates the product state
+   - Selections saved in localStorage
 
-**Use your preferred IDE**
+4. **Compare Colors Button**
+   - Opens a modal to compare colors side-by-side
+   - Allows selection of up to 4 colors to compare visually
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+5. **Pairs Well With Carousel**
+   - Horizontally scrollable row with complementary products
+   - Navigation buttons for easy scrolling
+   - Product cards with image, title, price, and add to cart button
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+6. **Product Bundle Suggestion**
+   - Shows a bundle of products that work well together
+   - Includes individual prices and a combined discounted total
+   - Single "Add Bundle to Cart" button
 
-Follow these steps:
+7. **Tabs for Product Info**
+   - Three tabs: Description, Product Information, and Shipping Details
+   - Tabs toggle content visibility using JavaScript
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+8. **Related Products Section**
+   - Grid of 4 related product cards
+   - Cards include image, product name, price, and optional badges
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+9. **Bonus Features**
+   - Image zoom on hover/click for the main product image
+   - Selections saved using localStorage
+   - Micro-interactions (transitions, hover effects, animations)
+   - Fully responsive layout (mobile, tablet, desktop)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## How to Run Locally
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone this repository or download the ZIP file
+2. Extract the files to a folder on your computer
+3. Open the `index.html` file in a web browser
+
+Alternatively, you can use a local development server:
+
+```bash
+# Using Node.js http-server
+npx http-server
+
+# Using Python
+python -m http.server
 ```
 
-**Edit a file directly in GitHub**
+## Folder Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+└── README.md
+```
 
-**Use GitHub Codespaces**
+## Technologies Used
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b66f1ea5-c0b2-4c72-ba58-ea8fd42ba778) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- HTML5
+- CSS3 (with Flexbox and Grid)
+- Vanilla JavaScript
+- Local Storage API

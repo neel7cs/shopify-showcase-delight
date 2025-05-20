@@ -1,26 +1,518 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>shopify-showcase-delight</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <div class="container">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+      <span>Home</span>
+      <span class="separator">/</span>
+      <span>Clothing</span>
+      <span class="separator">/</span>
+      <span class="current">Classic Cotton T-Shirt</span>
+    </div>
 
-    <meta property="og:title" content="shopify-showcase-delight" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Product Main Section -->
+    <div class="product-main">
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+        <div class="thumbnails-container">
+          <button class="scroll-btn up-btn" id="scrollUp">&#9650;</button>
+          <div class="thumbnails" id="thumbnails">
+            <div class="thumbnail active" data-index="0">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 1">
+            </div>
+            <div class="thumbnail" data-index="1">
+              <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 2">
+            </div>
+            <div class="thumbnail" data-index="2">
+              <img src="https://images.unsplash.com/photo-1618354691229-88d47f285158?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 3">
+            </div>
+            <div class="thumbnail" data-index="3">
+              <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 4">
+            </div>
+            <div class="thumbnail" data-index="4">
+              <img src="https://images.unsplash.com/photo-1589310243389-96a5483213a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 5">
+            </div>
+            <div class="thumbnail" data-index="5">
+              <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Product thumbnail 6">
+            </div>
+          </div>
+          <button class="scroll-btn down-btn" id="scrollDown">&#9660;</button>
+        </div>
+        <div class="main-image-container" id="mainImageContainer">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Main product image" id="mainImage">
+        </div>
+      </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+      <!-- Product Info -->
+      <div class="product-info">
+        <!-- Badge & Title -->
+        <div class="badge-container">
+          <span class="badge">New</span>
+        </div>
+        <h1 class="product-title">Classic Cotton T-Shirt</h1>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Price -->
+        <div class="price-container">
+          <span class="current-price">$29.99</span>
+          <span class="original-price">$39.99</span>
+          <span class="save-badge">Save $10.00</span>
+        </div>
+
+        <!-- Rating -->
+        <div class="rating">
+          <div class="stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star half-filled">★</span>
+          </div>
+          <span class="reviews">4.5 (124 reviews)</span>
+        </div>
+
+        <!-- Colors -->
+        <div class="colors-section">
+          <div class="section-header">
+            <h3>Color: <span id="selectedColor">Navy Blue</span></h3>
+            <button id="compareColorsBtn" class="text-button">Compare Colors</button>
+          </div>
+          <div class="color-options">
+            <button class="color-option active" data-color="Navy Blue" style="background-color: #1B365D;"></button>
+            <button class="color-option" data-color="Heather Gray" style="background-color: #9098A0;"></button>
+            <button class="color-option" data-color="Black" style="background-color: #000000;"></button>
+            <button class="color-option" data-color="White" style="background-color: #FFFFFF;"></button>
+            <button class="color-option" data-color="Burgundy" style="background-color: #800020;"></button>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div class="sizes-section">
+          <div class="section-header">
+            <h3>Size</h3>
+            <button id="sizeChartBtn" class="text-button">Size Chart</button>
+          </div>
+          <div class="size-options">
+            <button class="size-option" data-size="XS">XS</button>
+            <button class="size-option active" data-size="S">S</button>
+            <button class="size-option" data-size="M">M</button>
+            <button class="size-option" data-size="L">L</button>
+            <button class="size-option" data-size="XL">XL</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="cart-actions">
+          <div class="quantity-selector">
+            <label for="quantity">Qty</label>
+            <select id="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="add-to-cart-btn">Add to Cart</button>
+          <button class="wishlist-btn">Save to Wishlist</button>
+        </div>
+
+        <!-- Shipping Info -->
+        <div class="additional-info">
+          <div class="info-item">
+            <div class="info-icon">⏱</div>
+            <p>Ships in 1-2 business days</p>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">↩</div>
+            <p>Free returns within 30 days</p>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🔒</div>
+            <p>Secure checkout</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Tabs -->
+    <div class="product-tabs">
+      <div class="tabs-header">
+        <button class="tab-button active" data-tab="description">Description</button>
+        <button class="tab-button" data-tab="information">Product Information</button>
+        <button class="tab-button" data-tab="shipping">Shipping Details</button>
+      </div>
+      <div class="tab-content" id="description">
+        <div class="tab-inner">
+          <h3>Product Description</h3>
+          <p>This premium cotton t-shirt combines comfort with durability. Made from 100% organic cotton, it's perfect for everyday wear while remaining environmentally conscious. The classic fit is flattering on all body types.</p>
+          <ul class="features-list">
+            <li>Soft, breathable 100% organic cotton</li>
+            <li>Pre-shrunk for a perfect fit</li>
+            <li>Reinforced shoulder seams for added durability</li>
+            <li>Ethically sourced materials</li>
+            <li>Machine washable, tumble dry low</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-content hidden" id="information">
+        <div class="tab-inner">
+          <h3>Product Information</h3>
+          <table class="info-table">
+            <tr>
+              <td>Material</td>
+              <td>100% Organic Cotton, 180gsm</td>
+            </tr>
+            <tr>
+              <td>Care Instructions</td>
+              <td>Machine wash cold, tumble dry low, do not bleach</td>
+            </tr>
+            <tr>
+              <td>SKU</td>
+              <td>CT100-NB-M</td>
+            </tr>
+            <tr>
+              <td>Country of Origin</td>
+              <td>Portugal</td>
+            </tr>
+            <tr>
+              <td>Sustainability</td>
+              <td>Made with GOTS certified organic cotton</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="tab-content hidden" id="shipping">
+        <div class="tab-inner">
+          <h3>Shipping Information</h3>
+          <p>We offer the following shipping options to ensure you receive your items in a timeframe that suits you:</p>
+          
+          <div class="shipping-options">
+            <div class="shipping-option">
+              <h4>Standard Shipping</h4>
+              <p>Delivery in 3-5 business days</p>
+              <p class="shipping-price">$4.99</p>
+            </div>
+            
+            <div class="shipping-option">
+              <h4>Express Shipping</h4>
+              <p>Delivery in 1-2 business days</p>
+              <p class="shipping-price">$9.99</p>
+            </div>
+            
+            <div class="shipping-option">
+              <h4>Free Shipping</h4>
+              <p>On orders over $75</p>
+              <p class="shipping-price">$0.00</p>
+            </div>
+          </div>
+          
+          <p>Once your order ships, you will receive a confirmation email with tracking information.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pairs Well With Section -->
+    <div class="pairs-well-with">
+      <div class="section-header-with-controls">
+        <h2>Pairs Well With</h2>
+        <div class="carousel-controls">
+          <button id="pairsPrevBtn" class="carousel-control">&#8592;</button>
+          <button id="pairsNextBtn" class="carousel-control">&#8594;</button>
+        </div>
+      </div>
+      <div class="pairs-carousel-container">
+        <div class="pairs-carousel" id="pairsCarousel">
+          <div class="pair-item">
+            <div class="pair-image">
+              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Slim Fit Jeans">
+            </div>
+            <h3>Slim Fit Jeans</h3>
+            <p class="pair-category">Bottoms</p>
+            <div class="pair-footer">
+              <span class="pair-price">$59.99</span>
+              <button class="pair-add-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="pair-item">
+            <div class="pair-image">
+              <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Classic Denim Jacket">
+            </div>
+            <h3>Classic Denim Jacket</h3>
+            <p class="pair-category">Outerwear</p>
+            <div class="pair-footer">
+              <span class="pair-price">$89.99</span>
+              <button class="pair-add-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="pair-item">
+            <div class="pair-image">
+              <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Leather Belt">
+            </div>
+            <h3>Leather Belt</h3>
+            <p class="pair-category">Accessories</p>
+            <div class="pair-footer">
+              <span class="pair-price">$39.99</span>
+              <button class="pair-add-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="pair-item">
+            <div class="pair-image">
+              <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Canvas Sneakers">
+            </div>
+            <h3>Canvas Sneakers</h3>
+            <p class="pair-category">Footwear</p>
+            <div class="pair-footer">
+              <span class="pair-price">$49.99</span>
+              <button class="pair-add-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="pair-item">
+            <div class="pair-image">
+              <img src="https://images.unsplash.com/photo-1561053720-76cd73ff22c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Leather Wallet">
+            </div>
+            <h3>Leather Wallet</h3>
+            <p class="pair-category">Accessories</p>
+            <div class="pair-footer">
+              <span class="pair-price">$34.99</span>
+              <button class="pair-add-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bundle Section -->
+    <div class="product-bundle">
+      <div class="bundle-header">
+        <h2>Complete the Look</h2>
+        <p>Purchase these items together and save 15%</p>
+      </div>
+      <div class="bundle-container">
+        <div class="bundle-items">
+          <div class="bundle-item">
+            <div class="bundle-image">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&q=80" alt="Classic Cotton T-Shirt">
+            </div>
+            <div class="bundle-item-details">
+              <h4>Classic Cotton T-Shirt</h4>
+              <p class="bundle-category">Tops</p>
+              <p class="bundle-price">$29.99</p>
+            </div>
+          </div>
+          <div class="bundle-plus">+</div>
+          <div class="bundle-item">
+            <div class="bundle-image">
+              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&q=80" alt="Slim Fit Jeans">
+            </div>
+            <div class="bundle-item-details">
+              <h4>Slim Fit Jeans</h4>
+              <p class="bundle-category">Bottoms</p>
+              <p class="bundle-price">$59.99</p>
+            </div>
+          </div>
+          <div class="bundle-plus">+</div>
+          <div class="bundle-item">
+            <div class="bundle-image">
+              <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&q=80" alt="Leather Belt">
+            </div>
+            <div class="bundle-item-details">
+              <h4>Leather Belt</h4>
+              <p class="bundle-category">Accessories</p>
+              <p class="bundle-price">$39.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="bundle-separator"></div>
+        <div class="bundle-summary">
+          <div class="bundle-pricing">
+            <div class="bundle-price-details">
+              <span>Bundle Price:</span>
+              <span class="bundle-total-price">$110.47</span>
+              <span class="bundle-original-price">$129.97</span>
+            </div>
+            <p class="bundle-savings">You save: $19.50 (15%)</p>
+          </div>
+          <button class="bundle-add-btn">Add Bundle to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="related-products">
+      <h2>You May Also Like</h2>
+      <div class="related-grid">
+        <div class="related-item">
+          <div class="related-image">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Striped Polo Shirt">
+            <span class="related-badge">New</span>
+          </div>
+          <div class="related-details">
+            <h3>Striped Polo Shirt</h3>
+            <p class="related-category">Tops</p>
+            <div class="related-price">
+              <span>$34.99</span>
+            </div>
+          </div>
+        </div>
+        <div class="related-item">
+          <div class="related-image">
+            <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Casual Linen Shirt">
+          </div>
+          <div class="related-details">
+            <h3>Casual Linen Shirt</h3>
+            <p class="related-category">Tops</p>
+            <div class="related-price">
+              <span>$42.99</span>
+            </div>
+          </div>
+        </div>
+        <div class="related-item">
+          <div class="related-image">
+            <img src="https://images.unsplash.com/photo-1618677603286-0ec56cb6e1b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Graphic Print T-Shirt">
+            <span class="related-badge">Sale</span>
+          </div>
+          <div class="related-details">
+            <h3>Graphic Print T-Shirt</h3>
+            <p class="related-category">Tops</p>
+            <div class="related-price">
+              <span>$24.99</span>
+              <span class="related-original">$32.99</span>
+            </div>
+          </div>
+        </div>
+        <div class="related-item">
+          <div class="related-image">
+            <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Long Sleeve Henley">
+          </div>
+          <div class="related-details">
+            <h3>Long Sleeve Henley</h3>
+            <p class="related-category">Tops</p>
+            <div class="related-price">
+              <span>$39.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="sizeChartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Size Chart</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <table class="size-chart-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (inches)</th>
+              <th>Waist (inches)</th>
+              <th>Hips (inches)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>XS</td>
+              <td>32-34</td>
+              <td>26-28</td>
+              <td>34-36</td>
+            </tr>
+            <tr>
+              <td>S</td>
+              <td>35-37</td>
+              <td>29-31</td>
+              <td>37-39</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>38-40</td>
+              <td>32-34</td>
+              <td>40-42</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>41-43</td>
+              <td>35-37</td>
+              <td>43-45</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>44-46</td>
+              <td>38-40</td>
+              <td>46-48</td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>47-49</td>
+              <td>41-43</td>
+              <td>49-51</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="measurement-guide">
+          <h3>How to Measure:</h3>
+          <p><strong>Chest:</strong> Measure around the fullest part of your chest, keeping the tape horizontally.</p>
+          <p><strong>Waist:</strong> Measure around your natural waistline, keeping the tape comfortably loose.</p>
+          <p><strong>Hips:</strong> Measure around the fullest part of your hips, approximately 8" below your waistline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="compareColorsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Compare Colors</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Select up to 4 colors to compare side by side</p>
+        <div class="compare-color-grid">
+          <div class="compare-color-option" data-color="Navy Blue">
+            <div class="color-swatch" style="background-color: #1B365D;"></div>
+            <span>Navy Blue</span>
+          </div>
+          <div class="compare-color-option" data-color="Heather Gray">
+            <div class="color-swatch" style="background-color: #9098A0;"></div>
+            <span>Heather Gray</span>
+          </div>
+          <div class="compare-color-option" data-color="Black">
+            <div class="color-swatch" style="background-color: #000000;"></div>
+            <span>Black</span>
+          </div>
+          <div class="compare-color-option" data-color="White">
+            <div class="color-swatch" style="background-color: #FFFFFF;"></div>
+            <span>White</span>
+          </div>
+          <div class="compare-color-option" data-color="Burgundy">
+            <div class="color-swatch" style="background-color: #800020;"></div>
+            <span>Burgundy</span>
+          </div>
+        </div>
+        
+        <div id="selectedColorsContainer" class="selected-colors-container hidden">
+          <h3>Selected Colors</h3>
+          <div id="selectedColorsGrid" class="selected-colors-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backdrop overlay for modals -->
+  <div id="modalBackdrop" class="modal-backdrop"></div>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
